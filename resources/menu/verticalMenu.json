@@ -1,0 +1,133 @@
+{
+  "menu": [
+    {
+      "url": "/",
+      "name": "Tableau De Bord",
+      "icon": "menu-icon tf-icons bx bx-home-circle",
+      "slug": "dashboard-analytics"
+    },
+    {
+      "name": "Offres De Stage",
+      "icon": "menu-icon tf-icons bx bx-layout",
+      "slug": "offers",
+      "submenu": [
+        {
+          "url": "/offers",
+          "name": "Gestion Des Offres",
+          "slug": "offers"
+        },
+        {
+          "url": "/levels",
+          "name": "Niveau d'études",
+          "slug": "levels"
+        },
+        {
+          "url": "/domains",
+          "name": "Domaines",
+          "slug": "domains"
+        },
+        {
+          "url": "/type-offers",
+          "name": "Type Offres",
+          "slug": "type-offers"
+        }
+      ]
+    },
+
+    {
+      "name": "Stages",
+      "icon": "menu-icon tf-icons bx bx bx-dock-top",
+      "slug": "pages-account-settings",
+      "submenu": [
+        {
+          "url": "/applications",
+          "name": "Candidatures",
+          "slug": "applications"
+        },
+        {
+          "url": "/internships",
+          "name": "Stage",
+          "slug": "internships"
+        }
+
+      ]
+    },
+
+    {
+      "menuHeader": "Gestion du Systeme"
+    },
+    {
+      "name": "Roles & permissions",
+      "icon": "menu-icon tf-icons bx bx bx-dock-top",
+      "slug": "pages-account-settings",
+      "submenu": [
+        {
+          "url": "/roles",
+          "name": "Roles",
+          "slug": "roles"
+        },
+        {
+          "url": "/permissions",
+          "name": "Permissions",
+          "slug": "permissions"
+        },
+        {
+          "url": "/users",
+          "name": "Utilisateurs",
+          "slug": "users"
+        }
+      ]
+    },
+
+    {
+      "menuHeader": "Pages"
+    },
+    {
+      "name": "Account Settings",
+      "icon": "menu-icon tf-icons bx bx bx-dock-top",
+      "slug": "pages-account-settings",
+      "submenu": [
+        {
+          "url": "/pages/account-settings-account",
+          "name": "Account",
+          "slug": "pages-account-settings-account"
+        },
+        {
+          "url": "/pages/account-settings-notifications",
+          "name": "Notifications",
+          "slug": "pages-account-settings-notifications"
+        },
+        {
+          "url": "/pages/account-settings-connections",
+          "name": "Connections",
+          "slug": "pages-account-settings-connections"
+        }
+      ]
+    },
+    {
+      "name": "Authentifications",
+      "icon": "menu-icon tf-icons bx bx-lock-open-alt",
+      "slug": "auth",
+      "submenu": [
+        {
+          "url": "/auth/login-basic",
+          "name": "Se Connecter",
+          "slug": "login",
+          "target": "_blank"
+        },
+        {
+          "url": "/auth/register-basic",
+          "name": "S'inscrire",
+          "slug": "register-post",
+          "target": "_blank"
+        },
+        {
+          "url": "/auth/forgot-password-basic",
+          "name": "Mot de passe oublié",
+          "slug": "auth-forgot-password-basic",
+          "target": "_blank"
+        }
+      ]
+    }
+  ]
+}
