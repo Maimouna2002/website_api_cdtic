@@ -16,8 +16,8 @@ class CreateApplicationsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('offer_id');
-            $table->string('cv');
             $table->string('motivation_letter');
+            $table->string('cv');
             $table->string('status')->default('pending');
             $table->timestamps();
 

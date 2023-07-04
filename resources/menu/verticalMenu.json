@@ -2,18 +2,18 @@
   "menu": [
     {
       "url": "/",
-      "name": "Tableau De Bord",
-      "icon": "menu-icon tf-icons bx bx-home-circle",
+      "name": "Tableau de bord",
+      "icon": "menu-icon tf-icons bx bx-home",
       "slug": "dashboard-analytics"
     },
     {
-      "name": "Offres De Stage",
-      "icon": "menu-icon tf-icons bx bx-layout",
+      "name": "Offres de stage",
+      "icon": "menu-icon tf-icons bx bx-briefcase",
       "slug": "offers",
       "submenu": [
         {
           "url": "/offers",
-          "name": "Gestion Des Offres",
+          "name": "Gestion des offres",
           "slug": "offers"
         },
         {
@@ -28,15 +28,14 @@
         },
         {
           "url": "/type-offers",
-          "name": "Type Offres",
+          "name": "Types d'offres",
           "slug": "type-offers"
         }
       ]
     },
-
     {
       "name": "Stages",
-      "icon": "menu-icon tf-icons bx bx bx-dock-top",
+      "icon": "menu-icon tf-icons bx bx-briefcase-alt-2",
       "slug": "pages-account-settings",
       "submenu": [
         {
@@ -46,24 +45,22 @@
         },
         {
           "url": "/internships",
-          "name": "Stage",
+          "name": "Stages",
           "slug": "internships"
         }
-
       ]
     },
-
     {
-      "menuHeader": "Gestion du Systeme"
+      "menuHeader": "Gestion du système"
     },
     {
-      "name": "Roles & permissions",
-      "icon": "menu-icon tf-icons bx bx bx-dock-top",
+      "name": "Rôles et permissions",
+      "icon": "menu-icon tf-icons bx bx-shield-quarter",
       "slug": "pages-account-settings",
       "submenu": [
         {
           "url": "/roles",
-          "name": "Roles",
+          "name": "Rôles",
           "slug": "roles"
         },
         {
@@ -78,18 +75,17 @@
         }
       ]
     },
-
     {
       "menuHeader": "Pages"
     },
     {
-      "name": "Account Settings",
-      "icon": "menu-icon tf-icons bx bx bx-dock-top",
+      "name": "Paramètres du compte",
+      "icon": "menu-icon tf-icons bx bx-user-circle",
       "slug": "pages-account-settings",
       "submenu": [
         {
           "url": "/pages/account-settings-account",
-          "name": "Account",
+          "name": "Compte",
           "slug": "pages-account-settings-account"
         },
         {
@@ -99,19 +95,19 @@
         },
         {
           "url": "/pages/account-settings-connections",
-          "name": "Connections",
+          "name": "Connexions",
           "slug": "pages-account-settings-connections"
         }
       ]
     },
     {
       "name": "Authentifications",
-      "icon": "menu-icon tf-icons bx bx-lock-open-alt",
+      "icon": "menu-icon tf-icons bx bx-lock-open",
       "slug": "auth",
       "submenu": [
         {
           "url": "/auth/login-basic",
-          "name": "Se Connecter",
+          "name": "Se connecter",
           "slug": "login",
           "target": "_blank"
         },

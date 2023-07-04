@@ -20,29 +20,30 @@
     <h5 class="card-title">Statistiques</h5>
     <div class="row">
       <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h6 class="card-title">Offres de stage</h6>
-            <p class="card-text"> nombreOffresStage </p>
+          <div class="card">
+              <div class="card-body">
+                  <h6 class="card-title"><i class='bx bx-briefcase'></i> Offres de stage</h6>
+                  <p class="card-text text-primary">{{ app('App\Http\Controllers\Admin\OfferController')->count() }}</p>
+              </div>
           </div>
-        </div>
       </div>
       <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h6 class="card-title">Candidatures</h6>
-            <p class="card-text"> nombreCandidatures </p>
+          <div class="card">
+              <div class="card-body">
+                  <h6 class="card-title"><i class='bx bx-file'></i> Candidatures</h6>
+                  <p class="card-text text-success">{{ app('App\Http\Controllers\Admin\ApplicationController')->countApplications() }}</p>
+              </div>
           </div>
-        </div>
       </div>
       <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h6 class="card-title">Utilisateurs</h6>
-            <p class="card-text">nombreUtilisateurs</p>
+          <div class="card">
+              <div class="card-body">
+                  <h6 class="card-title"><i class='bx bx-user'></i> Utilisateurs</h6>
+                  <p class="card-text text-warning">{{ app('App\Http\Controllers\Admin\UserController')->countUsers() }}</p>
+              </div>
           </div>
-        </div>
       </div>
+  </div>
     </div>
   </div>
 </div>

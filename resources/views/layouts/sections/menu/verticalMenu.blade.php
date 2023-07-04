@@ -2,17 +2,12 @@
 
   <!-- ! Hide app brand if navbar-full -->
   <div class="app-brand demo">
-    <a href="{{url('/')}}" class="app-brand-link">
-      <span class="app-brand-logo demo">
-        @include('_partials.macros',["width"=>25,"withbg"=>'#696cff'])
-      </span>
-      <span class="app-brand-text demo menu-text fw-bold ms-2">{{config('variables.templateName')}}</span>
-    </a>
-
-    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-autod-block d-xl-none">
-      <i class="bx bx-chevron-left bx-sm align-middle"></i>
+    <a href="{{ url('/') }}" class="app-brand-link">
+      <img src="{{asset('assets/img/avatars/logo.jpeg')}}" alt="Mon logo" width="70" height="70">
+      <span class=" demo menu-text fw-bold ms-2" style="font-size: 1.5rem;">CDTIC</span>
     </a>
   </div>
+
 
   <div class="menu-inner-shadow"></div>
 

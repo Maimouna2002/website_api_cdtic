@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
@@ -8,6 +9,7 @@ use App\Models\Domain;
 use App\Models\Level;
 use App\Models\TypeOffer;
 use Laratrust;
+use App\Http\Requests\OfferRequest;
 
 class OfferController extends Controller
 {
@@ -42,22 +44,12 @@ class OfferController extends Controller
     /**
      * Enregistre une nouvelle offre.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\OfferRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(OfferRequest $request)
     {
-        $validatedData = $request->validate([
-            'domain_id' => 'required',
-            'type_offer_id' => 'required',
-            'description' => 'required',
-            'date_start' => 'required|date',
-            'date_end' => 'required|date',
-            'available_places' => 'required|numeric',
-            'levels' => 'required|array',
-            'levels.*' => 'exists:levels,id',
-            'status' => 'required'
-        ]);
+        $validatedData = $request->validated();
 
         $offer = Offer::create($validatedData);
         $offer->levels()->sync($request->input('levels'));
@@ -65,7 +57,7 @@ class OfferController extends Controller
         return redirect()->route('offers.index')->with('success', 'L\'offre a été créée avec succès.');
     }
 
- /**
+    /**
      * Change the status for editing the specified resource.
      *
       */
@@ -90,6 +82,15 @@ class OfferController extends Controller
         return redirect()->route('offers.index')->withSuccess(__('Status Updated Successfully.'));
     }
 
+    ///
+    public function count()
+    {
+        // Compter le nombre d'offres
+        $nombreOffres = Offer::count();
+
+        // Retourner le nombre d'offres
+        return $nombreOffres;
+    }
 
     /**
      * Affiche le formulaire d'édition d'une offre spécifique.
@@ -111,25 +112,15 @@ class OfferController extends Controller
     /**
      * Met à jour une offre spécifique dans la base de données.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\OfferRequest  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(OfferRequest $request, $id)
     {
         $offer = Offer::findOrFail($id);
 
-        $validatedData = $request->validate([
-            'domain_id' => 'required',
-            'type_offer_id' => 'required',
-            'description' => 'required',
-            'date_start' => 'required|date',
-            'date_end' => 'required|date',
-            'available_places' => 'required|numeric',
-            'levels' => 'required|array',
-            'levels.*' => 'exists:levels,id',
-            'status' => 'required'
-        ]);
+        $validatedData = $request->validated();
 
         $offer->update($validatedData);
         $offer->levels()->sync($request->input('levels'));

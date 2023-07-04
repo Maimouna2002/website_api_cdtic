@@ -65,6 +65,15 @@ class UserController extends Controller
         return redirect()->route('users.index')->with('success', 'Utilisateur mis à jour avec succès');
     }
 
+public function countUsers()
+{
+    // Compter le nombre d'utilisateurs
+    $nombreUtilisateurs = User::count();
+
+    // Retourner le nombre d'utilisateurs
+    return $nombreUtilisateurs;
+}
+
     public function destroy(User $user)
     {
         $user->delete();

@@ -2,7 +2,6 @@
 
 @section('title', 'Types Offer Index')
 
-@section('content')
 
 @section('content')
  <!-- Page Heading -->

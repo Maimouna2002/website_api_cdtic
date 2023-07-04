@@ -15,9 +15,9 @@ class ApplicationRequest extends FormRequest
         return [
             'user_id' => 'required|exists:users,id',
             'offer_id' => 'required|exists:offers,id',
-            'cv' => 'required|string',
-            'motivation_letter' => 'required|string',
-            'status' => 'required|string',
+            'cv' => 'required|file|max:2048|mimes:pdf,doc,docx',
+            'motivation_letter' => 'required|file|max:2048|mimes:pdf,doc,docx',
+            'status' => 'string',
         ];
     }
 
@@ -29,8 +29,13 @@ class ApplicationRequest extends FormRequest
             'offer_id.required' => 'Le champ offre est requis.',
             'offer_id.exists' => 'L\'offre sélectionnée est invalide.',
             'cv.required' => 'Le champ CV est requis.',
+            'cv.file' => 'Le champ CV doit être un fichier.',
+            'cv.max' => 'Le fichier CV ne doit pas dépasser 2 Mo.',
+            'cv.mimes' => 'Le fichier CV doit être de type PDF, DOC ou DOCX.',
             'motivation_letter.required' => 'Le champ lettre de motivation est requis.',
-            'status.required' => 'Le champ statut est requis.',
+            'motivation_letter.file' => 'Le champ lettre de motivation doit être un fichier.',
+            'motivation_letter.max' => 'Le fichier lettre de motivation ne doit pas dépasser 2 Mo.',
+            'motivation_letter.mimes' => 'Le fichier lettre de motivation doit être de type PDF, DOC ou DOCX.',
         ];
     }
 }
