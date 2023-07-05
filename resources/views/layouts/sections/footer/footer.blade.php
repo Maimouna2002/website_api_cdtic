@@ -5,7 +5,7 @@
         document.write(new Date().getFullYear())
 
       </script>
-      , créé  par <a href="#" target="_blank" class="footer-link fw-bolder">CDTIC</a>
+      , créé  par <a href="#" target="_blank" class="">CDTIC</a>
     </div>
     <div>
       <a href="#" class="footer-link me-4" target="_blank">Conditions d'utilisation</a>
