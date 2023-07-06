@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Offer extends Model
 {
-     protected $with = ['domain','typeOffer'];
+    protected $with = ['domain','typeOffer','levels'];
     protected $fillable = [
         'type_offer_id',
         'domain_id',
