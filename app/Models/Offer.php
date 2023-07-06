@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Offer extends Model
 {
+     protected $with = ['domain','typeOffer'];
     protected $fillable = [
         'type_offer_id',
         'domain_id',
@@ -37,6 +38,7 @@ public function user()
     {
         return $this->belongsTo(domain::class);
     }
+
 
 
 }

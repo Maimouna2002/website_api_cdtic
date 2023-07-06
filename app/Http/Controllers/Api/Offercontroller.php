@@ -16,7 +16,7 @@ class OfferController extends Controller
      */
     public function index()
     {
-        $offers = Offer::all();
+      $offers = Offer::with('domain:name')->get();
         return response()->json($offers);
     }
 
@@ -28,6 +28,7 @@ class OfferController extends Controller
      */
     public function show(Offer $offer)
     {
+      $offer->load('domain:name');
         return response()->json($offer);
     }
 
