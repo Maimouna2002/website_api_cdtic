@@ -8,7 +8,6 @@ use App\Models\Offer;
 use App\Models\Domain;
 use App\Models\Level;
 use App\Models\TypeOffer;
-use Laratrust;
 use App\Http\Requests\OfferRequest;
 
 class OfferController extends Controller
@@ -32,8 +31,6 @@ class OfferController extends Controller
      */
     public function create()
     {
-       // Vérifier si l'utilisateur a le rôle d'administrateur
-
         $levels = Level::all();
         $domains = Domain::all();
         $typeOffers = TypeOffer::all();
@@ -58,11 +55,6 @@ class OfferController extends Controller
     }
 
     /**
-     * Change the status for editing the specified resource.
-     *
-      */
-
-    /**
      * Affiche les détails d'une offre spécifique.
      *
      * @param  int  $id
@@ -75,14 +67,11 @@ class OfferController extends Controller
         return view('content.offers.show', compact('offer'));
     }
 
-    public function status($id, $status)
-    {
-        Offer::findOrFail($id)->update(['status' => $status]);
-
-        return redirect()->route('offers.index')->withSuccess(__('Status Updated Successfully.'));
-    }
-
-    ///
+    /**
+     * Compte le nombre d'offres.
+     *
+     * @return int
+     */
     public function count()
     {
         // Compter le nombre d'offres
@@ -105,8 +94,7 @@ class OfferController extends Controller
         $typeOffers = TypeOffer::all();
         $domains = Domain::all();
 
-
-        return view('content.offers.edit', compact('offer', 'levels', 'typeOffers','domains'));
+        return view('content.offers.edit', compact('offer', 'levels', 'typeOffers', 'domains'));
     }
 
     /**
@@ -127,9 +115,15 @@ class OfferController extends Controller
 
         return redirect()->route('offers.index')->withSuccess(__('Offer Updated Successfully.'));
     }
+    public function status($id, $status)
+    {
+        Offer::findOrFail($id)->update(['status' => $status]);
+
+        return redirect()->route('offers.index')->withSuccess(__('Status Updated Successfully.'));
+    }
 
     /**
-     * Supprime une offre spécifique de la base de données.
+     * Supprime une offre spécifique de la base dedonnées.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

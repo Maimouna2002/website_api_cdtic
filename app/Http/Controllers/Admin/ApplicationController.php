@@ -50,7 +50,7 @@ class ApplicationController extends Controller
     }
     public function status($id, $status)
     {
-        Offer::findOrFail($id)->update(['status' => $status]);
+        Application::findOrFail($id)->update(['status' => $status]);
 
         return redirect()->route('applications.index')->withSuccess(__('Status Updated Successfully.'));
     }

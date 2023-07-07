@@ -17,20 +17,8 @@ class OfferRequest extends FormRequest
             'domain_id' => 'required|exists:domains,id',
             'type_offer_id' => 'required|exists:type_offers,id',
             'description' => 'required|string',
-            'date_start' => ['required', 'date_format:d/m/Y', function($attribute, $value, $fail) {
-                try {
-                    Carbon::createFromFormat('d/m/Y', $value);
-                } catch (\Exception $e) {
-                    $fail('The '.$attribute.' field is invalid.');
-                }
-            }],
-            'date_end' => ['required', 'date_format:d/m/Y', 'after_or_equal:date_start', function($attribute, $value, $fail) {
-                try {
-                    Carbon::createFromFormat('d/m/Y', $value);
-                } catch (\Exception $e) {
-                    $fail('The '.$attribute.' field is invalid.');
-                }
-            }],
+            'date_start' => ['required', 'date'],
+            'date_end' => ['required', 'date', 'after_or_equal:date_start'],
             'available_places' => 'required|integer|min:1',
             'status' => 'nullable|string|in:pending,active,closed'
         ];
